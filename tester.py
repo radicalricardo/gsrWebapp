@@ -11,7 +11,7 @@ def serviceChecker(name):
 
 def getInfo():
     for i in range(len(services)):
-        print(services[i] + ' status: ' + serviceChecker(services[i]))
+        print(services[i] + ' status: ' + str(serviceChecker(services[i])))
 
 
 if __name__ == '__main__':
