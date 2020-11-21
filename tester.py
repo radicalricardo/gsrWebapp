@@ -1,6 +1,6 @@
 import subprocess
 
-services = ['dhcp', 'dns', 'haproxy', 'nfs', 'snmp-daemon']
+services = ['bind9', 'isc-dhcp-server', 'nfs-kernel-server', 'haproxy', 'snmpd', 'tomcat7']
 
 
 def serviceChecker(name):
