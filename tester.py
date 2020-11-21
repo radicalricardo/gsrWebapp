@@ -1,17 +1,17 @@
 import subprocess
 import os
 
-services = ['bind9', 'isc-dhcp-server', 'nfs-kernel-server', 'haproxy', 'snmpd', 'tomcat7']
+services = ['bind9', 'dhcpd', 'nfs-kernel-server', 'haproxy', 'snmpd', 'tomcat7']
 
 
 def serviceChecker(name):
-    output = os.system('service ' + name + ' status')
+    output = os.system('service ' + name + ' status' + ' >/dev/null 2>&1')
     return output
 
 
 def getInfo():
     for i in range(len(services)):
-        print(serviceChecker(services[i]))
+        print(services[i] + ' status: ' + serviceChecker(services[i]))
 
 
 if __name__ == '__main__':
