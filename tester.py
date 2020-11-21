@@ -1,12 +1,11 @@
 import subprocess
+import os
 
 services = ['dhcp', 'dns', 'haproxy', 'nfs', 'snmp-daemon']
 
 
 def serviceChecker(name):
-    p = subprocess.Popen(["systemctl", "is-active", name], stdout=subprocess.PIPE)
-    (output, err) = p.communicate()
-    output = output.decode('utf-8')
+    output = os.system('service ' + name + ' status')
     return output
 
 
